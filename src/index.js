@@ -12,11 +12,11 @@ dotenv.config({ path: "./.env" });
 connectDB();
 
 // Serve static files from the frontend dist folder
-app.use(express.static(path.join(__dirname, '../Frontend/dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Route to serve the frontend index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Frontend/dist/index.html'));
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(process.env.PORT, () => {
